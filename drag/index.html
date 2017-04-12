@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>鼠标拖动</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script language="JavaScript" type="text/javascript">
+var drag_=false
+function Move_obj(obj){
+    var x,y;
+    document.querySelector(obj).onmousedown = function (e) {
+        var event = (e || window.event);
+        var target = event.target || event.srcElement;
+
+        drag_=true;
+        target.style.position = "absolute";
+        var temp1 = target.offsetLeft;
+        var temp2 = target.offsetTop;
+        x = event.clientX;
+        y = event.clientY;
+
+        document.onmousemove = function (e) {
+            if(!drag_) {
+                return false;
+            }
+            var event = (e || window.event);
+            var target = event.target || event.srcElement;
+            target.style.left = temp1 + event.clientX - x + "px";
+            target.style.top = temp2 + event.clientY - y + "px";
+        }
+        document.onmouseup = function () {
+            drag_ = false;
+            document.onmousemove = null;
+        }
+    }
+}
+</script>
+<body>
+<div id="drag" style="background-color:#0066CC;width:280px;height:160px;padding:20px;border:1px #003399 solid;font-size:10.5pt;color:white" onmouseover='Move_obj("#drag")'>
+  <p>这个层是可以拖动的，而且还可以吸附鼠标，试试看！</p>
+  <p>/</p>
+</div>
+</body>
+</html>

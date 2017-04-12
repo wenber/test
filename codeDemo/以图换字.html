@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>z-index负值实现图文替换</title>
+<style>
+#demo a,#demo a span{display:inline-block;overflow:hidden;width:38px;height:38px;vertical-align:top;-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;transition:all .3s ease-in;}
+
+#demo a{border:1px solid #ddd;background:url(ico.png) no-repeat;color:#000;font:12px/38px arial;text-align:center;text-decoration:none;}
+
+
+#demo a span{position:relative;z-index:-1;background-color:#eee;}
+
+#demo a:hover{background-position:0 -39px;color:#fff;}
+#demo a:hover span{background-color:#999;}
+</style>
+</head>
+<body>
+<div id="demo">
+	<a href="#nav" title="回到顶部"><span>TOP▲</span></a>
+</div>
+</body>
+</html>

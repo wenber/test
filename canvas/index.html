@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="624" height="840" style="border: 1px solid red">
+			您的浏览器不支持canvas
+		</canvas>
+        <canvas id="off-canvas" style="display: none;">
+        </canvas>
+		<!--<input type="range" name="name" value="1" style="width: 600px;" id="range" min="0.01" max="2.0" step="0.01"/>-->
+	</body>
+		<script type="text/javascript">
+		var image = new Image();
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+        var offCanvas = document.getElementById("off-canvas");
+        var offCtx = offCanvas.getContext("2d");
+        var isMouseDown = false;
+        var scale;
+
+		window.onload = function () {
+			canvas.onmousedown= function (e) {
+				e.preventDefault();
+                var point = windowToCanvas(e.clientX, e.clientY);
+                isMouseDown = true;
+                drawCanvasWithMagnifier(point);
+			}
+
+            canvas.onmousemove = function (e) {
+                e.preventDefault();
+
+                if (isMouseDown) {
+                    var point = windowToCanvas(e.clientX, e.clientY);
+                    drawCanvasWithMagnifier(point);
+                }
+            }
+
+            canvas.onmouseup = function (e) {
+                e.preventDefault();
+                isMouseDown = false;
+                drawCanvasWithMagnifier();
+            }
+
+            canvas.onmouseout = function (e) {
+                e.preventDefault();
+                isMouseDown = false;
+                drawCanvasWithMagnifier();
+            }
+
+			image.onload = function (e) {
+                offCanvas.width = image.width;
+                offCanvas.height = image.height;
+
+                scale = offCanvas.width / canvas.width;
+                ctx.drawImage(e.target, 0, 0, canvas.width, canvas.height);
+                offCtx.drawImage(image, 0, 0);
+			}
+			image.src = 'liuming.jpg'
+		}
+
+		function drawImageByScale(scale, sw, sh) {
+			var dw = sw * scale;
+			var dh = sh * scale;
+			var sx = (sw - canvas.width) / 2;
+			var sy = (sh - canvas.height) / 2;
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.drawImage(image, sx, sy, sw, sh, 0, 0, dw, dh);
+		}
+
+        function windowToCanvas (x, y) {
+            var bBox = canvas.getBoundingClientRect();
+            return {x: x - bBox.left, y: y - bBox.top};
+        }
+
+        function drawCanvasWithMagnifier (point) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            if (isMouseDown) {
+                maganifier(point);
+            }
+        }
+
+        function maganifier(point) {
+            //  根据当前小图的点的坐标 * 比例 = 原来大图的点坐标
+            var imageCX = point.x * scale;
+            var imageCY = point.y * scale;
+
+            var mr = 100;
+
+            var sx = imageCX - mr;
+            var sy = imageCY - mr;
+
+            var dx = point.x - mr;
+            var dy = point.y - mr;
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.lineWidth = 10;
+            ctx.strokeStyle = '#069';
+            ctx.arc(point.x, point.y, mr, 0 , 2 * Math.PI);
+            ctx.stroke();
+            ctx.clip();
+            ctx.drawImage(offCanvas, sx, sy, 2 * mr, 2 * mr, dx, dy, 2 * mr, 2 * mr);
+
+            ctx.restore();
+        }
+
+		</script>
+</html>

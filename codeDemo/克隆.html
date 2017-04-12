@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script type="text/javascript">
+  <!--
+	var a = {
+        memNum: 1,                                    // number
+        memStr: "I am a string",                      // string
+        memObj: {
+          test1: "Old value"                          // we’ll test
+        },
+        memArr: [                                     // array 
+          "a string",                                 // string member of array
+          {                                              // object member of array
+            test2: "Try changing me"           // we'll test
+          }
+        ]
+      };
+
+
+
+function cloneObject1(obj){ 
+	if(obj==null || typeof obj !=='object'){
+			return obj;
+		}
+
+	var o = obj.constructor === Array ? [] : {};//根据当前对象的类型声明一个新的对象
+
+	for(var i in obj){ 
+		//过滤非自身属性
+		if(obj.hasOwnProperty(i)){ 
+			o[i] = typeof obj[i] === "object" ? arguments.callee(obj[i]) : obj[i];//这里是核心
+		} 
+	} 
+
+	return o; 
+} 
+
+
+
+console.log(cloneObject1(a))
+  //-->
+  </script>
+ </body>
+</html>
+
+

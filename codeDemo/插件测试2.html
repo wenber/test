@@ -1,0 +1,55 @@
+<!-- <!doctype html> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html lang="en">
+ <head>
+	  <meta charset="UTF-8">
+	  <meta name="Author" content="liuming">
+	  <title>Document</title>
+ </head>
+ <body>
+		<div  id="a" style="height:200px; width:200px; padding:20px;">阿斯顿发送到</div>
+ </body>
+ <script type="text/javascript" src="jquery-1.7.js"></script>
+ <script type="text/javascript">
+// 创建一个闭包    
+(function ($) {
+    // 插件的定义    
+    $.fn.hilight = function (options) {
+        debug(this);
+        // build main options before element iteration    
+        var opts = $.extend({}, $.fn.hilight.defaults, options);
+        // iterate and reformat each matched element    
+        return this.each(function () {
+            $this = $(this);
+            // build element specific options    
+            var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+            // update element styles    
+            $this.css({
+                backgroundColor: o.background,
+                color: o.foreground
+            });
+            var markup = $this.html();
+            // call our format function    
+            markup = $.fn.hilight.format(markup);
+            $this.html(markup);
+        });
+    };
+    // 私有函数：debugging    
+    function debug($obj) {
+        if (window.console && window.console.log)
+            window.console.log('hilight selection count: ' + $obj.size());
+    };
+    // 暴露format函数    
+    $.fn.hilight.format = function (txt) {
+        return '<strong>' + txt + '</strong>';
+    };
+    // 暴露defaults参数,利于外部访问    
+    $.fn.hilight.defaults = {
+        foreground: 'red',
+        background: 'yellow'
+    };
+    // 闭包结束    
+})(jQuery);
+alert($("#a").hilight());
+ </script>
+ </html>

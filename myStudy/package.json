@@ -1,0 +1,22 @@
+{
+  "name": "myStudy",
+  "version": "0.0.1",
+  "description": "this program is to learn how to use node.js to construct a command line",
+  "main": "index.js",
+  "bin": {
+    "lm": "./bin/lm.js"
+  },
+  "scripts": {
+    "start": "node --debug-brk ./bin/lm",
+    "starts": "./bin/lm"
+  },
+  "keywords": [
+    "learn"
+    
+  ],
+  "author": "liuming07",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.5.1"
+  }
+}

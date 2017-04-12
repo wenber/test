@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+ </head>
+
+ 
+
+<body>
+    <div id="fly" style="position:absolute; left:0; top:0;">
+        <img src="a.jpg" /><br />
+        哈哈！我会飞！
+    </div>
+
+ </body> <script type="text/javascript">
+      
+	document.onmousedown = function(e) {        //当鼠标移动式获取当前x，y坐标值
+		var f = document.getElementById("fly");
+		var x = window.event.clientX;
+		
+		var y = window.event.clientY;
+        var left=parseInt(f.offsetLeft);
+		var top=parseInt(f.offsetTop);
+	
+        document.onmousemove=function(){
+			f.style.left = (x-left)+"px";                        //否则将f的坐标设为鼠标坐标值x，y
+			f.style.top = (y-top)+"px";
+			
+			
+		
+		}
+		document.onmouseup=function(){
+			
+			alert(44);
+		}
+		
+	}
+</script>
+</html>

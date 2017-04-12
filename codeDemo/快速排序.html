@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+ </head>
+
+ <body>
+  <script type="text/javascript">
+	var a=[2,1,54,432,23,34,6,2,66];
+
+	function quick_sort(s, l, r){
+   		 if (l < r){
+              
+            //左边第一个为基值
+      		var i = l, j = r, temp = s[l];
+
+        	while (i < j){
+        		//从右边找个基值小的
+    	        while(i < j && s[j] >= temp){ 
+                    j--; 
+        	    };
+
+        	    if(i < j){
+        	    	s[i++] = s[j];//挖空右边的填基值
+        	    }
+        	    //从左边找个基值小的
+            	while(i < j && s[i] <= temp){
+            		i++;
+          	    };
+          	    if(i < j){
+          	    	s[j--] = s[i];//挖空左边填基值
+          	    }
+        	}
+
+        	s[i] = temp;//基值填会左边
+       	    arguments.callee(s, l, i - 1); 
+        	arguments.callee(s, i + 1, r);
+   		}else{
+   			return;
+   		}
+	};
+
+	quick_sort(a,0,a.length-1);
+    alert(a);
+
+  </script>
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+ </head>
+ <body>
+  <script type="text/javascript">
+  <!--
+	var imgLoad = function (url, callback) {
+		var img = new Image();
+			img.src = url;
+		//有缓存
+		if (img.complete) {
+			callback(img.width, img.height);
+		} else {
+			//加载完毕
+			img.onload = function () {
+				callback(img.width, img.height);
+				img.onload = null;
+			};
+		};
+	};
+
+  //-->
+  </script>
+ </body>
+</html>

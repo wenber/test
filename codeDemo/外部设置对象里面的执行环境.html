@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//定义个对象
+		function A() {
+			this.name = "qzz";
+		}
+		//添加原型方法
+		A.prototype = {
+			sort: {
+				up: function() {
+
+				},
+				down: function() {
+					//这里怎么才能访问到this.name的值,因为在这里要用到this.name来实现逻辑
+					alert(this.name);
+				}
+			}
+		};
+
+
+
+		//实例化
+		var a  = new A();
+		a.sort.down.call(a);
+	</script>
+	
+</body>
+</html>
+

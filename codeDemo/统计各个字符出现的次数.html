@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script type="text/javascript">
+  <!--
+	var a="aassdddffffffffggghhhjjjkkkll";
+    function counts(str){
+		var obj={};
+		for(var i=0;i<str.length;i++){
+			if(!obj[str[i]]){
+				obj[str[i]]=1;
+			}else{
+			 obj[str[i]]++;
+			}
+			
+		}
+		return obj;
+	}
+
+	var obj=counts(a);
+	//obj是统计结果
+	var max_obj={};
+	var max_num=0;
+	
+	for(var key in obj){
+		if(obj[key]>max_num){
+			max_obj=key;
+			max_num=obj[key];
+
+		}
+	}
+	document.write(max_obj+":"+max_num);
+  //-->
+    // for(var i=0;i<obj.length)
+	
+  </script>
+ </body>
+</html>

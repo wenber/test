@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script type="text/javascript">
+	Array.prototype.shuffle=function(){
+		var resultArr=[];
+		var len=this.length;
+
+		while(len){
+			var _index=parseInt(Math.random()*len);
+				resultArr.push(this[_index]);
+			for(var i=_index;i<len;i++){//后面的向前移动
+				this[i]=this[i+1];
+			}
+			len--;
+		}
+		return resultArr;
+	}
+   var a=new Array('1','2','3','4','5','6');
+   alert(a.shuffle());
+  </script>
+ </body>
+</html>

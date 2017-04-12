@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		#main{ margin:0 auto; height:auto; width:1160px; position:relative;}
+		.pic{float:left;padding:0 10px 10px 0;}
+		.pic img{padding: 10px;border:1px solid #ccc; border-radius: 5px;box-shadow:0 0 5px #ccc; width:200px; height:auto; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="pic">
+			<img src="d.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="a.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="b.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="k.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="d.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="a.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="b.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="k.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="a.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="b.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="k.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="a.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="b.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="k.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="a.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="b.jpg" alt="">
+		</div>
+		<div class="pic">
+			<img src="k.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	window.onload=function(){
+		waterfall("main","pic");
+		var dataInt = {"data":[{"src":"a.jpg"},{"src":"k.jpg"},{"src":"b.jpg"},{"src":"d.jpg"},]}
+		window.onscroll=function(){
+			if(checkScrollSlide){
+				var fragment = document.createDocumentFragment();
+				for(var i=0;i<dataInt.data.length;i++){
+					var obox = document.createElement("div");
+					obox.className = "pic";
+					var img = document.createElement("img");
+					img.src=dataInt.data[i].src;
+					obox.appendChild(img);
+					fragment.appendChild(obox);
+				}
+				document.getElementById("main").appendChild(fragment);
+				//每次插入文档后还要进行瀑布流布局
+				waterfall("main","pic");
+			}
+		}
+	};
+
+	function waterfall(main,box){
+		var arrPic=[];
+		var parent = document.getElementById(main);
+
+		var objChild = getByClass(parent,box);
+
+		var oBoxW = objChild[0].offsetWidth;
+
+		var cols = Math.floor(parent.offsetWidth/oBoxW);
+		
+      
+		for(var i=0,len=objChild.length;i<len;i++){
+			if(i<cols){
+				arrPic.push(objChild[i].offsetHeight);
+			}else{
+				var min = Math.min.apply(this,arrPic);
+				var index = getMinIndex(arrPic,min);
+				
+				objChild[i].style.position="absolute";
+				objChild[i].style.top=arrPic[index]+"px";
+				objChild[i].style.left=objChild[index].offsetLeft+"px";
+
+				arrPic[index]+=objChild[i].offsetHeight;
+			}
+		}
+	}
+
+	function getByClass(parent,classN){
+		var obj = parent.getElementsByTagName("*");
+		var arrObj=[];
+
+		for(var i = 0, len=obj.length;i<len;i++){
+			obj[i].className === classN && arrObj.push(obj[i]);
+		}
+		return arrObj;
+	};
+	function getMinIndex(arr,min){
+		for(var i in arr){
+			if(arr[i]===min)
+			{
+				return i
+			} 
+
+		}
+	}
+
+function checkScrollSlide(){
+	var oParent = document.getElementById("main");
+	var oBox  = oParent.getByClass(oParent,"pic");
+	var scrollTop = (document.body.scrollTop||document.documentElement.scrollTop)+(document.body.clientHeight|| document.documentElement.clientHeight);
+
+	return oBox.lastChild.offsetTop>scrollTop;
+}
+
+</script>
+</html>

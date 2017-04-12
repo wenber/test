@@ -1,0 +1,72 @@
+<!-- <!doctype html> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html lang="en">
+ <head>
+	  <meta charset="UTF-8">
+	  <meta name="Author" content="liuming">
+	  <title>Document</title>
+ </head>
+ <body>
+		<div  id="a" style="height:200px; width:200px; padding:20px;background:red"></div>
+ </body>
+ <script type="text/javascript" src="jquery-1.7.js"></script>
+ <script type="text/javascript">
+
+     //添加静态方法
+	//直接添加成全局函数
+	jQuery.foo = function() {   
+		alert('This is a test. This is only a test.');  
+	};
+	//用extend关键字来扩展
+	jQuery.extend({      
+		foo: function() {      
+			alert('This is a test. This is only a test.');      
+		}   
+	});  
+	
+	//采用命名空间
+	jQuery.myPlugin = {          
+		foo:function() {          
+			alert('This is a test. This is only a test.');          
+		}     
+	};  
+
+
+
+
+
+	
+	//添加动态方法
+	//用fn.extend关键字
+	(function($){     
+		$.fn.extend({     
+			foo:function(opt,callback){     
+				alert(opt);		 
+			}     
+		})     
+	})(jQuery); 
+	//注意这样也可以
+	$.extend($.fn, {
+		jSlider: function(setting) {
+		}
+	});
+	//直接添加在原型上
+	(function($) {       
+		$.fn.pluginName = function() {     
+			
+		};     
+	})(jQuery); 
+
+	//对参数的处理
+	$.fn.hilight = function(options) {    
+	  var defaults = {    
+		foreground: 'red',    
+		background: 'yellow'    
+	  };    
+	  var opts = $.extend(defaults, options);    
+	};   
+
+
+
+ </script>
+ </html>

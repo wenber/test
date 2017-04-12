@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+.load-wrap{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+.load{
+    width: 94px;
+    height: 94px;
+    border: 3px solid transparent;
+    border-bottom: 3px solid  #ff9b25;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform : rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.load{
+    -webkit-animation: circle_right 12s linear infinite;
+    animation: circle_right 12s linear infinite;
+}
+
+@keyframes circle_right{
+    0% {
+        transform : rotate(45deg);
+    }
+    100%{
+        transform : rotate(3915deg);
+    }
+}
+@-webkit-keyframes circle_right{
+    0% {
+        transform : rotate(45deg);
+    }
+    100%{
+        transform : rotate(3915deg);
+    }
+}
+
+
+</style>
+<body>
+    <div class="load-wrap">
+        <div class="load"></div>
+    </div>
+</body>
+</html>

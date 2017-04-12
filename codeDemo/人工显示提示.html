@@ -1,0 +1,36 @@
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function initEvent() {
+            var links = document.getElementsByTagName("a");//获取标签为a的内容
+            for (var i = 0; i < links.length; i++) {       //逐行遍历
+                var link = links[i];
+                link.onmouseover = onmouse;                  //当鼠标经过某行是调用onmouse函数
+				link.onmouseout = onmouseout;
+            }
+        }
+        function onmouse() {
+            var div = document.createElement("div");         //动态创建div标签
+            div.style.position = "absolute";                //设置标签属性为手型
+			div.style.border="1px solid #333";
+			div.setAttribute('id',"cur");
+            div.style.top = window.event.clientY;            //设置y坐标
+            div.style.left = window.event.clientX;            //设置x坐标
+            div.innerHTML = "saefagfawefaw<font color='red'>后卫噢服务和偶if</font>";//将要显示的内容添加到后面
+            document.body.appendChild(div);                //将动态的div跟在body后面
+        }
+		function onmouseout(){
+			document.body.removeChild(document.getElementById("cur"));
+		}
+    </script>
+</head>
+<body onload="initEvent ()">
+    <a href="http://www.baidu.com" title="aesfwaef;ah">百度</a><br />
+    <br /> 
+    <a href="http://www.baidu.com" title="afwaajmalkm">新浪</a><br />   
+    <br />
+    <a href="http://www.baidu.com" title="afwaajmalkm">谷歌</a><br /> 
+    <br />
+    <a href="http://www.baidu.com" title="afwaajmalkm">哈哈</a><br />  
+    <br />
+</body>

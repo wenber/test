@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/baidu/.nvm/v0.10.30/bin/node',
+1 verbose cli   '/Users/baidu/.nvm/v0.10.30/bin/npm',
+1 verbose cli   'link' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 verbose linkPkg /Users/baidu/github/test/myStudy
+5 verbose link build target /Users/baidu/.nvm/v0.10.30/lib/node_modules/myStudy
+6 verbose install where,what [ '/Users/baidu/github/test/myStudy', [] ]
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/Users/baidu/github/test/myStudy', [ 'commander' ] ]
+9 info preinstall myStudy@0.0.1
+10 verbose readDependencies using package.json deps
+11 verbose already installed skipping commander@^2.5.1 /Users/baidu/github/test/myStudy
+12 silly resolved []
+13 info build /Users/baidu/github/test/myStudy
+14 verbose linkStuff [ false, false, false, '/Users/baidu/github/test' ]
+15 info linkStuff myStudy@0.0.1
+16 verbose linkBins myStudy@0.0.1
+17 verbose linkMans myStudy@0.0.1
+18 verbose rebuildBundles myStudy@0.0.1
+19 verbose rebuildBundles [ 'commander' ]
+20 info install myStudy@0.0.1
+21 info postinstall myStudy@0.0.1
+22 info prepublish myStudy@0.0.1
+23 info build /Users/baidu/.nvm/v0.10.30/lib/node_modules/myStudy
+24 verbose linkStuff [ true,
+24 verbose linkStuff   '/Users/baidu/.nvm/v0.10.30/lib/node_modules',
+24 verbose linkStuff   true,
+24 verbose linkStuff   '/Users/baidu/.nvm/v0.10.30/lib/node_modules' ]
+25 info linkStuff myStudy@0.0.1
+26 verbose linkBins myStudy@0.0.1
+27 verbose link bins [ { lm: './cli/lm.js' }, '/Users/baidu/.nvm/v0.10.30/bin', true ]
+28 verbose linkMans myStudy@0.0.1
+29 error Error: ENOENT, chmod '/Users/baidu/.nvm/v0.10.30/lib/node_modules/myStudy/cli/lm.js'
+30 error If you need help, you may report this *entire* log,
+30 error including the npm and node versions, at:
+30 error     <http://github.com/npm/npm/issues>
+31 error System Darwin 14.0.0
+32 error command "/Users/baidu/.nvm/v0.10.30/bin/node" "/Users/baidu/.nvm/v0.10.30/bin/npm" "link"
+33 error cwd /Users/baidu/github/test/myStudy/bin
+34 error node -v v0.10.30
+35 error npm -v 1.4.21
+36 error path /Users/baidu/.nvm/v0.10.30/lib/node_modules/myStudy/cli/lm.js
+37 error code ENOENT
+38 error errno 34
+39 verbose exit [ 34, true ]

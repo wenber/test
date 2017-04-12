@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		#main{ margin:0 auto; height:auto; width:696px; position:relative;}
+		.cols{width:232px;height:auto;float: left;}
+		.pic{float:left;padding:0 10px 10px 0;}
+		.pic img{padding: 10px;border:1px solid #ccc; border-radius: 5px;box-shadow:0 0 5px #ccc; width:200px; height:auto; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="left" class="cols">
+			<div class="pic">
+				<img src="b.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="b.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+		</div>
+		<div id="center" class="cols">
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="a.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="b.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+		</div>
+		<div id="right" class="cols">
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="a.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="b.jpg" alt="">
+			</div>
+			<div class="pic">
+				<img src="k.jpg" alt="">
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script>
+var  oBoxH =[0,0,0];
+	window.onload=function(){
+		var dataInt = {"data":[{"src":"a.jpg"},{"src":"k.jpg"},{"src":"b.jpg"},{"src":"d.jpg"},]}
+		window.onscroll=function(){
+			if(checkScrollSlide()){
+				for(var i=0;i<dataInt.data.length;i++){
+					var obox = document.createElement("div");
+					obox.className = "pic";
+					var img = document.createElement("img");
+					img.src=dataInt.data[i].src;
+					obox.appendChild(img);
+					var index=waterfall("main","cols");
+					console.log(index);
+					getByClass(document.getElementById("main"),"cols")[index].appendChild(obox);
+				}
+			}
+				
+		}
+	};
+
+	function waterfall(main,box){
+		
+		var parent = document.getElementById(main);
+
+		var objChild = getByClass(parent,box);
+		var oBoxW = objChild[0].offsetWidth;
+		var cols = Math.floor(parent.offsetWidth/oBoxW);
+
+		var min = Math.min.apply(this,oBoxH);
+		var index = getMinIndex(oBoxH,min);
+		console.log(oBoxH);
+		console.log(index);
+		oBoxH[index]=objChild[index].offsetHeight;
+		console.log(objChild[1].offsetHeight);
+		return index;
+	}
+
+	function getByClass(parent,classN){
+		var obj = parent.getElementsByTagName("*");
+		var arrObj=[];
+
+		for(var i = 0, len=obj.length;i<len;i++){
+			obj[i].className === classN && arrObj.push(obj[i]);
+		}
+		return arrObj;
+	};
+	function getMinIndex(arr,min){
+		for(var i in arr){
+			if(arr[i]===min)
+			{
+				return i
+			} 
+		}
+	}
+
+function checkScrollSlide(){
+	var oParent = document.getElementById("main");
+	var oCols  = getByClass(oParent,"cols");
+	var scrollTop = (document.body.scrollTop||document.documentElement.scrollTop)+(document.body.clientHeight|| document.documentElement.clientHeight);
+	for(var i=0;i<oCols.length;i++){
+		if(oCols[i].offsetHeight<scrollTop){
+			return true;
+		}
+	}
+	return false;
+}
+
+</script>
+</html>

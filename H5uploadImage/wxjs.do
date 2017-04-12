@@ -1,0 +1,1 @@
+wx.auth_jsonp({"code":0,"message":"","data":{"timestamp":"1463624943","appId":"wxdb47b133c958b4d8","nonceStr":"vYvWRUdCVjrBHFIf","url":"http://event.wanmei.com/zxsj/poster/imgCroper?from=singlemessage&isappinstalled=0","signature":"d2f8b9cf32be02a0988683c3438b4701079e5307"}})

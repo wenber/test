@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script type="text/javascript">
+	function dynamicLoad()  
+	{  
+	   var _doc=document.getElementsByTagName('head')[0];  
+	   var script=document.createElement('script');  
+
+		script.setAttribute('type','text/javascript');  
+		script.setAttribute('src','jquery-1.4.4.js');  
+
+		_doc.appendChild(script);  
+		//非ie        ie，
+		script.onload=script.onreadystatechange=function(){  
+			//非ie               ie，该值不确定        
+		   if(!this.readyState||this.readyState=='loaded'||this.readyState=='complete'){  
+		   alert('done');  
+		}  
+		script.onload=script.onreadystatechange=null;  
+		}  
+	} 
+  </script>
+ </body>
+</html>

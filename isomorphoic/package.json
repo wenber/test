@@ -1,0 +1,16 @@
+{
+  "name": "isomorphoic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js --live -- --require ./fake-fs.js:fs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^11.2.0",
+    "budo": "^5.1.0",
+    "global": "^4.3.0"
+  }
+}

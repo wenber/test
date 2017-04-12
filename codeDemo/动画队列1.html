@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="./jquery-1.7.js"></script>
+ </head>
+
+ <body>
+  <script type="text/javascript">
+  <!--
+	var _slideFun=[
+
+    function(){$('.one').delay(500).animate({top:'+=270px'},500,_takeOne);},
+
+    function(){$('.two').delay(300).animate({top:'+=270px'},500,_takeOne);},
+
+    function(){$('.three').delay(300).animate({top:'+=270px'},500,_takeOne);},
+
+    function(){$('.four').delay(300).animate({top:'+=270px'},500,_takeOne);},
+
+    function(){$('.five').delay(300).animate({top:'+=270px'},500,_takeOne);},
+
+    function(){$('.six').delay(300).animate({top:'+=270px'},500,_takeOne);},//回调函数
+
+    function(){$('.seven').delay(300).animate({top:'+=270px'},500,function(){
+
+        alert('按序落体运动结束! Yeah!');
+
+    });}
+
+];
+
+$('#demo').queue('slideList',_slideFun);
+
+function _takeOne(){
+
+    $('#demo').dequeue('slideList');
+
+};
+
+_takeOne();
+
+  //-->
+  </script>
+ </body>
+</html>

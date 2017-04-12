@@ -1,0 +1,27 @@
+<!-- <!doctype html> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html lang="en">
+ <head>
+	  <meta charset="UTF-8">
+	  <meta name="Author" content="liuming">
+	  <title>Document</title>
+ </head>
+ <body>
+		<script type="text/javascript">
+			var a=[1,23,21,342,432,43,4,4,2,0];
+			for(var i=0; i<a.length-1;i++){
+				var  min = a[i];//依次取得每一个数
+				for(var j=i+1;j<a.length;j++){
+					if(min>a[j]){
+						var temp=min;
+						min=a[j];
+						a[j]=temp;
+					}
+				}
+				a[i]=min;//找出最小的那个，赋值给当前循环到的位置
+			}
+			alert(a);
+		</script>
+ </body>
+ <script type="text/javascript" src=""></script>
+ </html>

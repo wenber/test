@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0081)http://event.wanmei.com/zxsj/poster/imgCroper?from=singlemessage&isappinstalled=0 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+				<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>《诛仙世界》再一次宣言</title>
+        <link type="text/css" rel="stylesheet" href="./a_files/jquery.nstSlider.css">
+				<link rel="stylesheet" href="./a_files/base.css">
+				<link rel="stylesheet" href="./a_files/imgCrop.css">
+				<link href="./a_files/boxy.css" rel="stylesheet" type="text/css">
+               <style>
+				#loading-upload{ position: fixed;width:100%;height: 100%;left:0;top:0;background: rgba(0,0,0,.5);z-index: 999;display:none}
+				#loading-upload span{background:rgba(0,0,0,.9) url(http://zxsj.wanmei.com/resources/gif/151123/10561448262239693.gif) no-repeat center center;background-size:30px;position:absolute;left:50%;top:50%;margin-left:-32px;margin-top:-32px; border-radius:8px;width:64px;height:64px;}
+               </style>
+    <script type="text/javascript" src="./a_files/wxjs.do" async=""></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+    <body>
+			<div class="wrap">
+				<!-- 步骤 -->
+				<div class="imgCrop_container">
+				  <div class="imgCrop_step">
+						<p class="stepTit"><span>1</span>请上传照片</p>
+					  <div class="stepCont">
+							<div class="fileInput">
+								<div class="fileIcon"></div>
+								<img id="result">
+								<input id="orgSrc" type="hidden">
+								<input type="file" id="file" name="image" accept="image/*">
+							</div>
+						</div>
+					</div>
+					<div class="imgCrop_step">
+						<p class="stepTit"><span>2</span>请选择文字颜色</p>
+					  <div class="stepCont">
+							<!-- 选择颜色 -->
+							<ul class="list_color">
+								<li class="active">
+									<input type="radio" name="color" class="color" checked="" value="0">
+									<div class="c_blu" data-color="2c6cbb"><span></span></div>
+								</li>
+								<li>
+									<input type="radio" name="color" class="color" value="1">
+									<div class="c_ye" data-color="caba8e"><span></span></div>
+								</li>
+								<li>
+									<input type="radio" name="color" class="color" value="2">
+									<div class="c_red" data-color="f01208"><span></span></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				  <div class="imgCrop_step">
+					  <p class="stepTit"><span>3</span>请输入描述</p>
+							<div class="stepCont">
+							<ul class="list_desc">
+								<li>
+									<span>再一次，</span>
+									<div class="input_desc input_short input_nick"><input type="text" maxlength="5"></div>
+								</li>
+								<li>
+									<ul class="nickName">
+										<li><div>改变</div></li>
+										<li><div>行动</div></li>
+										<li><div>面对</div></li>
+										<li><div>前行</div></li>
+										<li><div>勇敢</div></li>
+									</ul>
+								</li>
+								<!-- <li>
+									<div class="cont_lable active">我不愿</div>
+									<div class="cont_lable">我不要</div>
+								</li> -->
+								<li>
+									<div class="input_desc input_Fir"><input type="text" value="我不愿/不要" maxlength="10"></div>
+								</li>
+								<li>
+									<div class="input_desc"><input type="text" value="我要" maxlength="10"></div>
+								</li>
+								<li>
+									<div class="input_desc"><input type="text" value="我要" maxlength="10"></div>
+								</li>
+								<li>
+									<span>MAKE Ａ CHANGE</span>
+								</li>
+								<li>
+									<span>再一次，只为更好</span>
+								</li>
+							</ul>
+							</div>
+					</div>
+				</div> 
+				<!-- 底部按钮 -->
+				<div class="btn_bottom_bg">
+					<div class="btn_bottom">
+						<span class="psr_create">生成海报</span>
+						<span class="psr_more">更多海报</span>
+					</div>				  
+				</div>
+			</div>
+			<!-- 裁剪图片弹层 -->
+			<div id="previewImage" class="previewImage">
+				<div class="container">
+					<img class="orgin" id="imgo" style="left: 0px;">
+					<img class="mask" id="mask">
+					<div class="draghandle"></div>
+				</div>
+				<div class="btns">
+					<span id="crop">确定</span>
+					<div class="sliderBox">
+						<div class="nstSlider" data-range_min="0" data-range_max="100" data-cur_min="0" data-cur_max="98"> 		
+							<div class="highlightPanel"></div>
+								<div class="bar" style="left: 8px; width: 90px;"></div>
+								<div class="leftGrip" tabindex="0" style="left: 0px;"></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- <img id="previewImage" src="" alt=""> -->
+			<div id="loading-upload">
+            	<span></span>
+            </div>
+      <script type="text/javascript" src="./a_files/jquery-1.8.2.min.js"></script>
+			<script src="./a_files/jquery.nstSlider.min.js"></script>
+			<script src="./a_files/imgcrop.js"></script>
+			<script src="./a_files/stat.js"></script>
+			<script type="text/javascript" src="./a_files/jquery.boxy.js"></script>
+			<script>
+				Cropper.init()
+				$(".psr_more").on("click", function() {
+					window.location.href = "/zxsj/poster/morePoster";
+				})
+				function isEmpty(str) {
+					return str == null || str == "";
+				}
+				//生成海报
+				$('.psr_create').on('click',function(){
+					var base64 = $("#orgSrc").val();
+					if(isEmpty(base64)) {
+						alert("您还没有上传图片！");
+						return;
+					}
+					var hero = $(".input_nick input").val();
+					if(hero.length > 6) {
+						alert("标题不能超过6个字符！");
+						return;
+					}
+					var color = parseInt($("[type=radio]:checked").val());
+					var line1 = $(".list_desc li").eq(-5).find("input").val();
+					var line2 = $(".list_desc li").eq(-4).find("input").val();
+					var line3 = $(".list_desc li").eq(-3).find("input").val();
+					if( isEmpty(hero) 
+							|| (color < 0 || color >= 3)
+							|| isEmpty(line1) || isEmpty(line2) || isEmpty(line3)) {
+						alert("海报信息不完整！");
+						return;
+					}
+					$('#loading-upload').show()
+					$.ajax({
+						url : "/zxsj/poster/upload",
+						type : "post",
+						dataType : "json",
+						data : {
+							base64 : base64,
+							color : color,
+							hero : hero,
+							line1 : line1,
+							line2 : line2,
+							line3 : line3
+						},
+						success : function(data) {
+							$('#loading-upload').hide()
+							if(data.success) {
+								$.simpleAlert({
+					                content: "海报上传成功，请等待官方审核",
+					                ok: function () {
+					                	window.location.href = "/zxsj/poster/morePoster";
+					                }
+					            });
+							} else {
+								$.simpleAlert(data.message);
+							}
+						}
+					});
+				});
+
+	</script>
+    <script src="./a_files/weixin.js"></script>
+    <script>
+    	wx.ready(function(){	
+			var shareUrl = window.location.href
+			var imgUrl = 'http://zxsj.wanmei.com/resources/jpg/151123/10561448267707881.jpg'
+			wx.onMenuShareTimeline({
+                    title: '再一次，只为更好。2016，我要全新的自己，你呢？',
+                    link: shareUrl,
+                    imgUrl: imgUrl
+                });
+			 wx.onMenuShareAppMessage({
+                    title: '再一次，只为更好',
+                    desc: '2016，我要全新的自己，你呢？',
+                    link: shareUrl,
+                    imgUrl: imgUrl
+                });
+		})
+    </script>
+    
+<div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-top.png&quot;);"></div></div></body></html>

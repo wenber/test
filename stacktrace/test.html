@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./stacktrace.min.js"></script>
+    <script src="./dist/stacktrace.min.js.map"></script>
+</head>
+<body>
+<div id="test"></div>
+<script>
+
+// window.onerror = function(msg, file, line, col, error) {
+//     StackTrace.fromError(error).then(function (e) {
+//         document.getElementById('text').innerHTML = e;
+//     }).catch(errback);
+// };
+// 
+
+// try {
+//     new Error();
+// }
+// catch (e) {
+
+// }
+
+
+// 1
+// var e = new Error('test');
+// console.dir(e);
+
+// 2
+// try {
+//     throw new Error('test');
+// }
+// catch (e) {
+//     console.dir(e);
+// }
+
+// 2
+try {
+    throw new Error('test');
+}
+catch (e) {
+    var callback = function(stackframes) {
+        var stringifiedStack = stackframes.map(function(sf) { 
+            return sf.toString(); 
+        }).join('\n'); 
+        console.log(stringifiedStack); 
+    };
+    var errback = function(err) {
+        console.log(err.message);
+    };
+
+    StackTrace.fromError(e).then(callback).catch(errback)
+}
+</script>
+
+</body>
+</html>

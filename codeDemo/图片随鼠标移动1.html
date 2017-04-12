@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+ </head>
+
+ 
+
+<body>
+   <div id="div1" onmousedown="mouseDownFun();" onmouseup="mouseUpFun();" onclick="click()" style="background:#CCC; border:3px solid #999; width:200px; height:200px; padding:10px"></div>
+
+<input style="margin-top:10px" type="button" onclick="document.getElementById('div1').innerHTML='';" value="清除信息" />
+
+<script type="text/javascript">
+var doMouseDownTimmer = null;
+var isMouseDownDoing = false;
+
+function mouseDownFun()
+ {
+     //因为mouseDownFun每次都会调用的，在这里重新初始化这个变量
+    isMouseDownDoing = false;
+     //延迟200毫秒才调用onmousedown真正的处理代码，如果在200毫秒内就释放鼠标，把 doMouseDownTimmer清除，那么onmousedown即使调用了，其实是没有调用到doMouseDown函数作为 onmousedown真正要处理的代码
+    doMouseDownTimmer = setTimeout(doMouseDown,200);
+ }
+
+function doMouseDown()
+ {
+     //如果200毫秒后调用了这个方法，把isMouseDownDoing设置成true，表明发生了mouseDown实际处理，此后mouseUp就不要处理了
+    isMouseDownDoing = true;
+     document.getElementById('div1').innerHTML += 'mouseDown<br/>';
+ }
+
+function mouseUpFun()
+ {
+     if (!isMouseDownDoing)
+     {
+         clearTimeout(doMouseDownTimmer); //能进到这里来，不管三七二十一先把doMouseDownTimmer清除，不然200毫秒后doMouseDown方法还是会被调用的
+        document.getElementById('div1').innerHTML += 'mouseUp<br/>';
+     }
+ }
+ function click(){
+  document.getElementById('div1').innerHTML += 'click<br/>';
+ }
+</script>
+</html>

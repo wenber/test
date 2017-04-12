@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+ 
+  <p><button id="test">Test</button></p>
+  <p id="log"></p>
+ 
+<script>
+  var obj = {
+    name: "John",
+    test: function() {
+      $("#log").append( this.name );
+			alert(arguments[2]);
+			$("#test").off("click", obj.test);
+    }
+  };
+ 
+  $("#test").on( "click", jQuery.proxy( obj, "test" ,1,2,3) );
+</script>
+ 
+</body>
+</html>

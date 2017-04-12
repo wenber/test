@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-flexboxgrid": "0.0.2",
+    "nodemailer": "^2.5.0",
+    "nodemailer-markdown": "^1.0.0",
+    "profiler": "^1.2.3",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenber/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenber/test/issues"
+  },
+  "homepage": "https://github.com/wenber/test#readme"
+}

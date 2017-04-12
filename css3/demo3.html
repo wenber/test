@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#a{
+    color:blue;
+    width:100px;
+    height: 100px;
+    margin-bottom: 10px;
+    background: red;
+    position: absolute;
+    left:200px;
+    top:0;
+     -moz-transition: all 1s ease-in 0; 
+    -webkit-transition: all 1s ease-in 0;
+    -o-transition: all 1s ease-in 0;
+    transition: all 1s ease-in 0;
+}
+.onoffswitch-active{
+    background: blue;
+    width:100px;
+    height: 100px;
+    display: inline-block;
+}
+.onoffswitch-active:hover +#a{
+
+   top:300px;
+     -moz-transition: all 0.3s ease-in 0; 
+    -webkit-transition: all 0.3s ease-in 0;
+    -o-transition: all 0.3s ease-in 0;
+    transition: all 0.3s ease-in 0;
+}
+
+
+</style>
+</head>
+<body>
+
+        <a class="onoffswitch-active">ON</a>
+	    <!-- <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/> -->
+        <div id="a">fsdf</div>
+
+</body>
+</html>

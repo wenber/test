@@ -1,0 +1,48 @@
+<!-- <!doctype html> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html lang="en">
+ <head>
+	  <meta charset="UTF-8">
+	  <meta name="Author" content="liuming">
+	  <title>Document</title>
+ </head>
+ <body>
+		<div  id="a" style="height:200px; width:200px; padding:20px;background:red"></div>
+ </body>
+ <script type="text/javascript" src="jquery-1.7.js"></script>
+ <script type="text/javascript">
+(function($){
+	$.fn.alert=function(options){
+		//1默认参数配置
+		var defaults={
+			backgroundColor:'yellow',
+			color:'green',
+			width:'20px'
+		};
+
+		//2与外来参数合并
+		var obj=$.extend({},defaults,options);	
+		//$.extend(defaults,options);
+
+
+		//3返回this的遍历操作函数,本质上为返回this
+		 return this.each(function(){
+			var selObj=$(this);
+			var oldBg=selObj.css("background-color");
+            
+			selObj.hover(function(){
+				selObj.css("background-color",obj.backgroundColor);
+			
+			},function(){
+				selObj.css("background-color",oldBg);
+			});
+				
+		});
+
+	}
+
+
+})(jQuery);
+$("#a").alert();
+ </script>
+ </html>

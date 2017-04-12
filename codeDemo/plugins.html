@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <style>
+            div#show1 span,div#show1 span.normal{
+                margin:20px;
+                background-color:#333;
+                color:#fff;
+                padding:5px 10px;
+            }
+            div#show1 span.hover{
+                background-color:#666;
+            }
+            div#show1 span.disabled{
+                background-color:#999;
+            }
+        </style>
+        <script src="jquery-1.7.1.js"></script>
+        <script src="plugins.js"></script>
+    </head>
+    <body>
+        <div id="show1">
+            
+        </div>
+        <script>
+            var myBt=$('<span/>').button({
+					text:'button',
+					states:{'in':'hover','out':'normal','disabled':'disabled'}
+                    }).appendTo('#show1');
+
+            myBt.button('setDisable');
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<style>
+    .content {
+        width: 1200px;
+        margin: 0 auto;
+
+        padding-left:  100px;
+        padding-right: 100px;
+        overflow: hidden;
+    }
+    .main {
+        width: 100%;
+        height: 40px;
+        background: red;
+
+        float: left;
+    }
+    .left {
+        width: 100px;
+        height: 40px;
+        background: yellow;
+
+        float: left;
+        margin-left: -100%;
+        position: relative;
+        left: -100px;
+
+    }
+    .right {
+        width: 100px;
+        height: 40px;
+        background: green;
+
+        float: left;
+        margin-left: -100px;
+        position: relative;
+        right: -100px;
+    }
+
+</style>
+<body>
+    <div class="content">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>

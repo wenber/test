@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../bower/jquery-1-7-1/bower_components/jquery/jquery.js"></script>
+</head>
+<body>
+    <div id="a">
+        <!-- <input type="text" id="b" /> -->
+       <!--  <input type="button" value="dianwo" id="c" />
+        <input type="checkbox" checked="off" /> -->
+         <div id="b" style="height:20px;width:20px;border:1px solid red;" data-age='24'></div>
+    </div>
+   
+<script>
+    // var a  = document.getElementById('a');
+    // var b  = document.getElementById('b');
+    // var c  = document.getElementById('c');
+    // // a.onclick = function (e) {
+    // //      alert('click');
+    // // }
+    // b.onmousedown = function () {
+    //      alert('mousedown')
+    // }
+    // b.onmouseup = function (event) {
+    //     alert('mouseup')
+    //     event.stopPropagation();
+    //     event.returnValue = false;
+    // }
+    $(function () {
+        var a = $('#a');
+        // a.data('publicData', 'liuming');
+        // $._data(a, 'privateData', 'man');
+        a.click = function () {
+            alert(9);
+        }
+        // a.on('mouseover', function () {
+        //     alert(0);
+        // })
+        // a.on('mouseover', function () {
+        //     alert(9);
+        // })
+        // a.on('mouseup', function () {
+        //     alert(9);
+        // })
+        // a.on('#b', 'click', function () {})
+
+
+        var b = $('#b');
+        b.data('publicData', 'liuming');
+        $.data(b[0], 'privateData', 'man', true);
+
+        // console.log(a[0][$.expando]);
+        // var body = $('body');
+        // body.data('publicData', 'liuming');
+        // $.data(body, 'privateData', 'tyy', true);
+        // body.on('click', function () {});
+        // body.mouseover(function() {} );
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+    "name": "efcstudy",
+    "version": "0.0.1",
+    "description": "edp project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "edp": {
+        "wwwroot": "/",
+        "depDir": "dep",
+        "srcDir": "src",
+        "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-8-2/esl.js",
+        "dependencies": {
+            "ef": "~3.1.0-beta.3",
+            "emc": "~1.0.0",
+            "eoo": "~0.1.1",
+            "er": "~3.1.0-beta.6",
+            "esui": "~3.1.0-beta.6",
+            "etpl": "~3.0.0",
+            "fc-ajax": "~0.0.1-alpha.8",
+            "fc-component-ria": "~0.0.1-alpha.7",
+            "fc-core": "~0.0.1-alpha.7",
+            "fc-icon": "~0.0.5",
+            "fc-storage": "~0.0.1-alpha.6",
+            "fc-view": "~0.0.1-alpha.17",
+            "fcui": "~0.0.2-alpha.14",
+            "mini-event": "~1.0.2",
+            "moment": "~2.7.0",
+            "promise": "~1.0.2",
+            "underscore": "~1.6.0"
+        }
+    },
+    "dependencies": {},
+    "author": "liuming07@baidu.com",
+    "repository": "empty",
+    "license": "BSD",
+    "readme": "README"
+}

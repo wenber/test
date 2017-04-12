@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+ </head>
+
+ 
+
+<body>
+   <div id="div1" onmousedown="mouseDownFun();" onmouseup="mouseUpFun();" onclick="clickFun();" style="background:#CCC; border:3px solid #999; width:200px; height:200px; padding:10px"></div>
+
+<input style="margin-top:10px" type="button" onclick="document.getElementById('div1').innerHTML='';" value="清除信息" />
+
+<script type="text/javascript">
+function mouseDownFun()
+ {
+     document.getElementById('div1').innerHTML += 'mouseDown<br/>';
+ }
+
+function mouseUpFun()
+ {
+     document.getElementById('div1').innerHTML += 'mouseUp<br/>';
+ }
+
+function clickFun()
+ {
+     document.getElementById('div1').innerHTML += 'click<br/>';
+ }
+</script>
+</html>
