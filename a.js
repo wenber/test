@@ -29,6 +29,9 @@ var request = require('request');
 request('http://www.baidu.com').pipe(fs.createWriteStream('./a.html'));
 
 
+
+
+
 // var fs = require('fs');
 // var readStream = fs.createReadStream('aa.html');
 // var writeStream = fs.createWriteStream('a.html');
