@@ -13,7 +13,7 @@
 // process.stdin.on('end', function () {
 //     process.stdout.write('end\n');
 // })
-// 
+//
 
 var fs = require('fs')
 var request = require('request');
@@ -40,3 +40,5 @@ request('http://www.baidu.com').pipe(fs.createWriteStream('./a.html'));
 // readStream.on('end', function() { // 当没有数据时，关闭数据流
 //     writeStream.end();
 // });
+//
+//
