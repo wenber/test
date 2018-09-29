@@ -2668,6 +2668,7 @@
     }
 
     vm._watcher = new Watcher(vm, updateComponent, noop);
+    debugger;
     hydrating = false;
 
     // manually mounted instance, call mounted on self
@@ -3000,11 +3001,11 @@
    * Evaluate the getter, and re-collect dependencies.
    */
   Watcher.prototype.get = function get() {
-    debugger;
     pushTarget(this);
     var value;
     var vm = this.vm;
     try {
+      debugger;
       value = this.getter.call(vm, vm);
     } catch (e) {
       if (this.user) {
@@ -3117,6 +3118,7 @@
   };
 
   /**
+   * 
    * Depend on all deps collected by this watcher.
    */
   Watcher.prototype.depend = function depend() {
@@ -4354,6 +4356,7 @@
       vm.$vnode = _parentVnode;
       // render self
       var vnode;
+      // 这里会添加deps
       vnode = render.call(vm._renderProxy, vm.$createElement);
       // return empty vnode in case the render function errored out
       if (!(vnode instanceof VNode)) {
