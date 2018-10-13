@@ -2,22 +2,23 @@
  * Actual demo
  */
 
-var demo = new Vue({
+new Vue({
 
-  el: '#demo',
+    el: '#demo',
 
-  data: {
-    name: 'liuming'
-  },
+    data: {
+        name: 'liuming'
+    },
 
-  created: function () {
-  },
-
-  watch: {
-  },
-
-  
-
-  methods: {
-  }
+    created: function() {},
+    computed: {
+        age() {
+            return this.name + 44;
+        }
+    },
+    methods: {
+        click() {
+            this.name = 'tyy';
+        }
+    }
 })
