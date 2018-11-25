@@ -2,7 +2,7 @@
   "name": "demo",
   "description": "application created by thinkjs",
   "version": "1.0.0",
-  "author": "liuming <liuming@kuaishou.com>",
+  "author": "",
   "scripts": {
     "start": "node development.js",
     "test": "THINK_UNIT_TEST=1 nyc ava test/ && nyc report --reporter=html",
@@ -45,7 +45,7 @@
     "metadata": {
       "name": "demo",
       "description": "application created by thinkjs",
-      "author": "liuming <liuming@kuaishou.com>",
+      "author": "",
       "babel": true
     },
     "projectName": "demo",
