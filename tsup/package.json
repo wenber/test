@@ -5,5 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "parcel serve"
+  },
+  "devDependencies": {
+    "tsup": "^6.2.3"
   }
 }
