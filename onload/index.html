@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    console.time('img')
+    window.onload = function () {
+      // 1张图片760ms,  如果同步插入1张，变成910， 如果异步插入1张，和异步的时间有关，可以是760，也可能是910，也可能1120
+      console.log('window.onload:');
+      console.timeLog('img')
+    }
+  </script>
+</head>
+<body>
+  <img onload="innerOnload()" src="https://pics0.baidu.com/feed/fd039245d688d43f99f426ec62c1c2100ff43bbc.jpeg@f_auto" alt="" height="100" width="100">
+  <script>
+
+    function innerOnload() {
+      console.log('innerOnload');
+      console.timeLog('img')
+    }
+    const img = document.createElement('img');
+    img.width = '100';
+    img.height = '100';
+    img.onload = function(e) {
+      console.log('insertOnload');
+      console.timeLog('img')
+    };
+    // 同步赋值，不插入dom也会加载图片
+    // img.src = 'https://pics7.baidu.com/feed/34fae6cd7b899e515b0e50d46078c938ca950d53.jpeg@f_auto';
+    setTimeout(() => {
+      img.src = 'https://pics7.baidu.com/feed/34fae6cd7b899e515b0e50d46078c938ca950d53.jpeg@f_auto';
+      document.body.appendChild(img);
+    }, 760);
+  </script>
+</body>
+</html>
